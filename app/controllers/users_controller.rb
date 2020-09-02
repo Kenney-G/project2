@@ -2,6 +2,10 @@
 
 class UsersController < ApplicationController
 
+
+  get "/login" do
+    erb
+
   # GET: /users
     #//Individual user's private homepage
   get "/users" do

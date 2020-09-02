@@ -1,0 +1,10 @@
+ 
+
+
+ ☐ Enable the rack session cookie middleware.
+ ☐ Generate a session secret so that our cookies are securely encrypted.
+ ☐ Create a User model that stores an email/username and encrypted password
+ ☐ implement the has_secure_password macro in the User model to enable storing an encrypted version of the password and authenticating against that.
+ ☐ Build forms for sign up and log in and links to the routes that render them
+ ☐ Build out controllers that handle rendering forms and responding to their submission
+ ☐ Use the methods from has_secure_password to create user accounts and authenticate them later, storing the user's ID in session cookies using the session hash in our controllers.

@@ -12,13 +12,18 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'bigdecimal', '1.3.5'
-gem 'guard'
-gem 'guard-livereload', '~> 2.5'
-gem 'rack-livereload'
 
 group :test do
   gem 'rspec'
   gem 'capybara'
   gem 'rack-test'
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
+end
+
+group :development, :test do 
+  gem 'dotenv'
+  gem 'session_secret_generator'
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5'
+  gem 'rack-livereload'
 end
