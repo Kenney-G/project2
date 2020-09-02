@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-	def create
+	has_secure_password
 end

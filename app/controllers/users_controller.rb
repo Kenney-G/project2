@@ -2,10 +2,6 @@
 
 class UsersController < ApplicationController
 
-
-  get "/login" do
-    erb
-
   # GET: /users
     #//Individual user's private homepage
   get "/users" do
@@ -15,7 +11,7 @@ class UsersController < ApplicationController
   # GET: /users/new
     #//Signup view
   get "/users/new" do
-    erb :"/users/new.html"
+    erb :"/users/new"
   end
 
   # POST: /users
