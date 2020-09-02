@@ -18,8 +18,9 @@ ul {
 
   body {
     background-color: #706bc4;
-    color: hsla(0, 100%, 50%, 0.863);
-    font-family: 'PT Sans', sans-serif;
+    color: #ffffc3;
+    font-family: 'Lora', serif;
+    font-size: 14px;
     line-height: 18px;
   }
 
@@ -41,4 +42,8 @@ li a {
 li a:hover {
   background-color: #00e080;
   color: #272727;
+}
+
+h1,h2,h3,h4,h5 {
+      font-family: 'Poiret One', cursive;
 }

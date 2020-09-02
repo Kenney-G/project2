@@ -1,6 +1,9 @@
+  #Tracks class refers to a specific user's backlog.
+
 class TracksController < ApplicationController
 
   # GET: /tracks
+    #The logged-in user's backlog
   get "/tracks" do
     erb :"/tracks/index.html"
   end
