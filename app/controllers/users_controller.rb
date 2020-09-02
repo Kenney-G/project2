@@ -17,7 +17,16 @@ class UsersController < ApplicationController
   # POST: /users
     #//Add a new user to the database
   post "/users" do
-    redirect "/users"
+    @user = User.new(username: params[:username], password: params[:password])
+      if @user.save
+        session[:id] = @user.id
+        redirect "/users/"
+      
+      else
+        erb :'users/new'
+    
+      end
+    end
   end
 
   # GET: /users/5
