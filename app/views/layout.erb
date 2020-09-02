@@ -9,6 +9,15 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 
+<script>
+  document.write(
+    '<script src="http://' +
+      (location.host || '${1:localhost}').split(':')[0] +
+      ':${2:35729}/livereload.js?snipver=1"></' +
+      'script>'
+  );
+</script>
+
     <ul class="navbar">
   <li><a href="default.asp">Home</a></li>
   <li><a href="news.asp">News</a></li>
