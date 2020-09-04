@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     
       end
     end
-  end
 
   # GET: /users/5
     #User's public read-only profile
