@@ -2,7 +2,7 @@
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-# directories %w(app lib config test spec features) \
+ directories %w(app lib config spec db public) \
 #  .select{|d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist")}
 
 ## Note: if you are using the `directories` clause above and you are not
@@ -39,18 +39,16 @@ guard 'livereload' do
   extensions.each do |ext, type|
     watch(%r{
           (?:app|vendor)
-          (?:/assets/\w+/(?<path>[^.]+) # path+base without extension
+          (?:/public/\w+/(?<path>[^.]+) # path+base without extension
            (?<ext>\.#{ext})) # matching extension (must be first encountered)
           (?:\.\w+|$) # other extensions
           }x) do |m|
       path = m[1]
-      "/assets/#{path}.#{type}"
+      "/public/#{path}.#{type}"
     end
   end
 
   # file needing a full reload of the page anyway
   watch(%r{app/views/.+\.(#{rails_view_exts * '|'})$})
-  watch(%r{*.+\.erb})
-  watch(%r{*.+\.css})
   watch(%r{config/locales/.+\.yml})
 end
