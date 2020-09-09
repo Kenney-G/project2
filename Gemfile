@@ -23,7 +23,5 @@ end
 group :development, :test do 
   gem 'dotenv'
   gem 'session_secret_generator'
-  gem 'guard'
-  gem 'guard-livereload', '~> 2.5'
   gem 'rack-livereload'
 end

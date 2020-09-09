@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET: /users
     #//Individual user's private homepage
   get "/users" do
-    erb :"/users/index.html"
+    erb :"/users/index"
   end
 
   # GET: /users/new
