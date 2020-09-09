@@ -5,6 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+use LogsController
 use GamesController
 use UsersController
 use TracksController

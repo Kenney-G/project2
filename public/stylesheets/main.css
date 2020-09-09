@@ -90,7 +90,7 @@ input, select, textarea {
 		background-repeat: no-repeat; 
 		background-size: cover;
 	  }
-	}
+	
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -1965,7 +1965,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: #999;
+		color: rgb(86, 196, 132);
 		font-size: 1.25em;
 		position: relative;
 		margin-top: -1.25em;
@@ -2050,21 +2050,21 @@ input, select, textarea {
 	}
 
 	::-webkit-input-placeholder {
-		color: #999;
+		color: rgb(255, 255, 255);
 		position: relative;
 		top: 3px;
 	}
 
 	:-moz-placeholder {
-		color: #999;
+		color: #3377cc	;
 	}
 
 	::-moz-placeholder {
-		color: #999;
+		color: #3377cc	;
 	}
 
 	:-ms-input-placeholder {
-		color: #999;
+		color: #3377cc	;
 	}
 
 /* Image */
@@ -2181,6 +2181,7 @@ input, select, textarea {
 
 		ol li {
 			padding-left: 0.25em;
+			color: #1eb8fb;
 		}
 
 	ul {
@@ -2394,7 +2395,7 @@ input, select, textarea {
 			}
 
 			table.default thead {
-				background-color: #555555;
+				background-color: #2e2d2d;
 				background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
 				background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
 				background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
@@ -2803,7 +2804,7 @@ input, select, textarea {
 		}
 
 			#footer .icons a {
-				color: #999;
+				color: #3377cc	;
 			}
 
 				#footer .icons a:hover {
@@ -2811,7 +2812,7 @@ input, select, textarea {
 				}
 
 		#footer .copyright {
-			color: #999;
+			color: #3377cc	;
 			margin-top: 1.5em;
 			text-align: center;
 			font-size: 0.9em;

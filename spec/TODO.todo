@@ -1,10 +1,21 @@
  
 
 
- ☐ Enable the rack session cookie middleware.
- ☐ Generate a session secret so that our cookies are securely encrypted.
- ☐ Create a User model that stores an email/username and encrypted password
- ☐ implement the has_secure_password macro in the User model to enable storing an encrypted version of the password and authenticating against that.
- ☐ Build forms for sign up and log in and links to the routes that render them
- ☐ Build out controllers that handle rendering forms and responding to their submission
- ☐ Use the methods from has_secure_password to create user accounts and authenticate them later, storing the user's ID in session cookies using the session hash in our controllers.
+ ✔ Enable the rack session cookie middleware. @done(20-09-09 17:14)
+ ✔ Generate a session secret so that our cookies are securely encrypted. @done(20-09-09 17:14)
+ ✔ Create a User model that stores an email/username and encrypted password @done(20-09-09 17:14)
+ ✔ implement the has_secure_password macro in the User model to enable storing an encrypted version of the password and authenticating against that. @done(20-09-09 17:14)
+ ✔ Build forms for sign up and log in and links to the routes that render them @done(20-09-09 17:14)
+ ✔ Build out controllers that handle rendering forms and responding to their submission @done(20-09-09 17:14)
+ ✔ Use the methods from has_secure_password to create user accounts and authenticate them later, storing the user's ID in session cookies using the session hash in our controllers. @done(20-09-09 17:14)
+
+☐ Build an MVC Sinatra application. @started(20-09-09 17:16)
+    ✔ Use ActiveRecord with Sinatra. @started(20-09-09 17:16) @done(20-09-09 17:17) @lasted(1m5s)
+    ✔ Use multiple models. @started(20-09-09 17:16) @done(20-09-09 17:17) @lasted(1m5s)
+    ☐ Use at least one has_many relationship on a User model and one belongs_to relationship on another model. @started(20-09-09 17:16)
+    ✔ Must have user accounts - users must be able to sign up, sign in, and sign out. @started(20-09-09 17:16) @done(20-09-09 17:17) @lasted(1m15s)
+    ☐ Validate uniqueness of user login attribute (username or email). @started(20-09-09 17:16)
+    ☐ Once logged in, a user must have the ability to create, read, update and destroy the resource that belongs_to user. @started(20-09-09 17:16)
+    ☐ Ensure that users can edit and delete only their own resources - not resources created by other users. @started(20-09-09 17:16)
+    ☐ Validate user input so bad data cannot be persisted to the database. @started(20-09-09 17:16)
+    ☐ BONUS: Display validation failures to user with error messages. (This is an optional feature, challenge yourself and give it a shot!) @started(20-09-09 17:16)
