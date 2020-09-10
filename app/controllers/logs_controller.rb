@@ -18,6 +18,7 @@ class LogsController < ApplicationController
 
   # GET: /logs/5
   get "/logs/:id" do
+    @log = Log.find(params[:id])
     erb :"/logs/show.html"
   end
 
