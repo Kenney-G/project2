@@ -8,4 +8,3 @@ run ApplicationController
 use LogsController
 use GamesController
 use UsersController
-use TracksController

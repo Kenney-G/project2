@@ -2,6 +2,7 @@ class LogsController < ApplicationController
 
   # GET: /logs
   get "/logs" do
+    @logs = Log.all
     erb :"/logs/index.html"
   end
 
