@@ -1,2 +1,5 @@
 .env
 .todo
+db/development.sqlite
+db/schema.rb
+.gitignore
