@@ -5,13 +5,15 @@ class UsersController < ApplicationController
   # GET: /users
     #//Individual user's private homepage
   get "/users" do
-    erb :"/users/index"
+    erb :"/users/index "
   end
+
+  get "/users/login" do 
 
   # GET: /users/new
     #//Signup view
   get "/users/new" do
-    erb :"/users/new"
+    erb :"/users/new "
   end
 
   # POST: /users
@@ -31,13 +33,13 @@ class UsersController < ApplicationController
   # GET: /users/5
     #User's public read-only profile
   get "/users/:id" do
-    erb :"/users/show.html"
+    erb :"/users/show "
   end
 
   # GET: /users/5/edit
     #//View for user to edit account information
   get "/users/:id/edit" do
-    erb :"/users/edit.html"
+    erb :"/users/edit "
   end
 
   # PATCH: /users/5

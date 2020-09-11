@@ -3,12 +3,12 @@ class LogsController < ApplicationController
   # GET: /logs
   get "/logs" do
     @logs = Log.all
-    erb :"/logs/index.html"
+    erb :"/logs/index "
   end
 
   # GET: /logs/new
   get "/logs/new" do
-    erb :"/logs/new.html"
+    erb :"/logs/new "
   end
 
   # POST: /logs
@@ -19,12 +19,12 @@ class LogsController < ApplicationController
   # GET: /logs/5
   get "/logs/:id" do
     @log = Log.find(params[:id])
-    erb :"/logs/show.html"
+    erb :"/logs/show "
   end
 
   # GET: /logs/5/edit
   get "/logs/:id/edit" do
-    erb :"/logs/edit.html"
+    erb :"/logs/edit "
   end
 
   # PATCH: /logs/5

@@ -6,12 +6,12 @@ class GamesController < ApplicationController
 
 
   get "/games" do
-    erb :"/games/index.html"
+    erb :"/games/index "
   end
 
   # GET: /games/5
   get "/games/:id" do
-    erb :"/games/show.html"
+    erb :"/games/show "
   end
 
 end
