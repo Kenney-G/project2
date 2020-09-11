@@ -1,1 +1,18 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>New Log</h1>
+<form method="post" action="/posts">
+  <p>
+    <div><label for="title">Title</label></div>
+    <input id="title" type="text" name="log[title]" />
+  </p> 
+  
+  <p>
+    <div><label for="console">Title</label></div>
+    <input id="console" type="text" name="log[console]" />
+  </p>
+   <p>
+    <div><label for="console">desc</label></div>
+    <textarea rows="8" cols="45" id="desc" type="text" name="log[desc]"></textarea>
+  
+  </p>
+  <input type="submit" value="Create log" />
+</form>
