@@ -1,4 +1,22 @@
 <h1>New Log</h1>
+
+<% if @article.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize@log.errors.count, "error"%> prohibited this log from being saved:</h2>
+        <ul>
+            <% @log.errors.full_messages.each do |msg| %>
+                <li><%= msg%></li>
+                <% end %>
+                </ul>
+                </div>
+                <% end %>
+
+<h1>Games: </h1>
+    <% @logs.each do |log| %>
+<p><a href="/logs/<%= log.id %>"><%= log.title %></a></p>
+    <% end %>
+
+
 <form method="post" action="/posts">
   <p>
     <div><label for="title">Title</label></div>
