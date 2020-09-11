@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # GET: /users/5
     #User's public read-only profile
   get "/users/:id" do
-    erb :"/users/show "
+    erb :"/users/show"
   end
 
   # GET: /users/5/edit
