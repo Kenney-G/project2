@@ -5,15 +5,13 @@ class UsersController < ApplicationController
   # GET: /users
     #//Individual user's private homepage
   get "/users" do
-    erb :"/users/index "
+    erb :"/users/index" 
   end
-
-  get "/users/login" do 
 
   # GET: /users/new
     #//Signup view
   get "/users/new" do
-    erb :"/users/new "
+    erb :"/users/new.html"
   end
 
   # POST: /users
@@ -22,13 +20,11 @@ class UsersController < ApplicationController
     @user = User.new(username: params[:username], password: params[:password])
       if @user.save
         session[:id] = @user.id
-        redirect "/users/"
-      
+        redirect "/"      
       else
         erb :'users/new'
-    
       end
-    end
+      end
 
   # GET: /users/5
     #User's public read-only profile
@@ -39,7 +35,7 @@ class UsersController < ApplicationController
   # GET: /users/5/edit
     #//View for user to edit account information
   get "/users/:id/edit" do
-    erb :"/users/edit "
+    erb :"/users/edit"
   end
 
   # PATCH: /users/5
@@ -53,5 +49,5 @@ class UsersController < ApplicationController
   delete "/users/:id/delete" do
     redirect "/users"
   end
-  
+
 end
