@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET: /users/new
     #//Signup view
   get "/users/new" do
-    erb :"/users/new.html"
+    erb :"/users/new"
   end
 
   # POST: /users

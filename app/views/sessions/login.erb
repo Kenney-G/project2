@@ -1,16 +1,37 @@
-<div class="container">
+
+<!-- app/views/sessions/login.erb -->
+<h1>Log In</h1>
+<%= @error %>
+<form method="post" action="/login">
+  <p>
+    <div><label for="username">username</label></div>
+    <input type="username" name="username" id="username" />
+  </p>
+  <p>
+    <div><label for="password">Password</label></div>
+    <input type="password" name="password" id="password" />
+  </p>
+  <input type="submit" value="Sign In"/>
+</form>
+
+
+
+
+<%# <h1>Login</h1> %>
+<!--<%= @error %> -->
+<%# <div class="container">
 <div class="form-group">
-      <label for="exampleInputEmail1">Username:</label>
+      <label for="username">Username:</label>
       <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="myawesomeusername">
       <small id="username" class="form-text text-muted">It doesn't actually have to be awesome.</small>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="supersecretpassword27">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="supersecretpassword27">
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary" value="Login"></button>
 
     <button type="button" class="btn btn-secondary">Already signed up? Log in here!</button>
 </form>
 </div>
-</div>
+</div> %>

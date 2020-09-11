@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
     
   get '/login' do 
-      erb :'/sessions/login.html'
+      erb :'/sessions/login'
     end
    
     post '/login' do 
       user = User.find_by_username(params[:username])
         if user && user.authenticate(params[:password]) 
           session[:id] = user.id
-          redirect "/users/index"
+          redirect "/"
         else
           @error = "I couldn't get that to work. Try something else?" 
           erb :'/sessions/login'
