@@ -10,7 +10,6 @@ class LogsController < ApplicationController
   
   # GET: /logs
   get "/logs" do
-    
     @logs = Log.all
     erb :"/logs/index"
   end
@@ -27,7 +26,6 @@ class LogsController < ApplicationController
     if @log.save
       redirect "/logs"
     else
-
       erb ":logs/new"
     end
   end
@@ -67,6 +65,7 @@ class LogsController < ApplicationController
     else 
       erb :"/logs/edit.html"
     end
+  end
 
   # DELETE: /logs/5/delete
     delete "/logs/:id/delete" do
