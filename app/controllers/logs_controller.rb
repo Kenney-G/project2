@@ -40,14 +40,27 @@ class LogsController < ApplicationController
   end
 
   # Retrieve a log with the matching parameter and allow it to be edited if the correct user is logged in.
-  set_log
+
   get "/logs/:id/edit" do
+    set_log
     erb :"/logs/edit"
+  end
+
+  def redirect_if_not_authorized
+    if !authorize_log(@log)
+      flash[:error] = "You don't have permission to do that action"
+      redirect "/logs"
+    end
+  end
+  
+  def authorize_log(log)
+    current_user == log.author
   end
 
   #Update an existing backlog
   patch "/logs/:id" do
     set_log
+    redirect_if_not_authorized
     if @log.update(title: params[:log][:title], content:params[:log][:content])
       flash[:success] = "log successfully updated"
       redirect "/logs/#{@log.id}"
@@ -58,6 +71,7 @@ class LogsController < ApplicationController
   # DELETE: /logs/5/delete
     delete "/logs/:id/delete" do
     set_log
+    redirect_if_not_authorized
     redirect "/logs"
   end
   
