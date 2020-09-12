@@ -7,32 +7,41 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
-<link rel="stylesheet" href="stylesheets/main.css"
+<link rel="stylesheet" href="/stylesheets/main.css"
 	</head>
   <body>
-   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">GameLogjam</a>
- 
-              <% if !logged_in? %>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">GameLogjam</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <% if !logged_in? %>
+      <a class="nav-link" href="/users/new">Signup</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/login">Login</a>
+      </li>
+      <% else %>
+      <li class="nav-item">
+      <a class="nav-link"><form method="post" action="/logout"><input type="hidden" name="_method" value="delete"/>
+      <input type="submit" value="Log Out"/>
+      </a>
 
-
-        <a href="/users/new">Signup</a>
-
- 
-        <a href="/login">Login</a>
-
-         <% else %>
-
-
- <form method="post" action="/logout"><input type="hidden" name="_method" value="delete"/>
-        <input type="submit" value="Log Out"/>
-        
-        </form>
-
-<%end%>
-
+      <% end%>
+      </form>
+      </li>  
+    </ul>
   </div>
+
+</div>
 </nav>
+
 <%= styled_flash %>
 <%= yield %>
 
@@ -47,13 +56,16 @@
   <input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
   <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
 </div> -->
-<a href="#top" clas="back-to-top">
- <img src="http://u.cubeupload.com/kkslidermight/arrow.png" alt="Back to Top" width="35" height="25">
+<br>
+<div>
+<a href="#top" class="back-to-top">
+ <img src="http://u.cubeupload.com/kkslidermight/arrow.png" alt="Back to Top" width="35" height="25" class="back-to-top">
 </a>
   <!-- footer -->
   <hr class="my-4">
 <p class="text-muted">This website was designed for Flatiron School's software development course.</p>
-
+</div>
+<footer"10px">
 <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -105,4 +117,5 @@
     </div>
   </div>
 </div>
+</footer>
   </body>
