@@ -1,7 +1,16 @@
 class LogsController < ApplicationController
 
+  def set_log 
+    @log = log.find_by_id(params[:id])
+    if @log.nil?
+      flash[:error] = "Couldn't find a log with id: #{params[:id]}"
+      redirect "/logs"
+    end
+  end
+  
   # GET: /logs
   get "/logs" do
+    
     @logs = Log.all
     erb :"/logs/index"
   end
@@ -25,22 +34,31 @@ class LogsController < ApplicationController
 
   # GET: /logs/5
   get "/logs/:id" do
+    set_log
     @log = Log.find(params[:id])
     erb :"/logs/show"
   end
 
-  # GET: /logs/5/edit
+  # Retrieve a log with the matching parameter and allow it to be edited if the correct user is logged in.
+  set_log
   get "/logs/:id/edit" do
     erb :"/logs/edit"
   end
 
-  # PATCH: /logs/5
+  #Update an existing backlog
   patch "/logs/:id" do
-    redirect "/logs/:id"
-  end
+    set_log
+    if @log.update(title: params[:log][:title], content:params[:log][:content])
+      flash[:success] = "log successfully updated"
+      redirect "/logs/#{@log.id}"
+    else 
+      erb :"/logs/edit.html"
+    end
 
   # DELETE: /logs/5/delete
-  delete "/logs/:id/delete" do
+    delete "/logs/:id/delete" do
+    set_log
     redirect "/logs"
   end
+  
 end
