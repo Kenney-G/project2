@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       user = User.find_by_username(params[:username])
         if user && user.authenticate(params[:password]) 
           session[:id] = user.id
-          redirect "/"
+          redirect "/users/show"
         else
           @error = "I couldn't get that to work. Try something else?" 
           erb :'/sessions/login'

@@ -15,8 +15,8 @@ class LogsController < ApplicationController
   # POST: /logs
   post "/logs" do
     @log = current_user.logs.build(title: params[:log][:title],console: params[:log][:console],desc: params[:log][:desc])
-    if @post.save
-      redirect "/posts"
+    if @log.save
+      redirect "/logs"
     else
 
       erb ":logs/new"
