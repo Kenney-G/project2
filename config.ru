@@ -8,3 +8,4 @@ run ApplicationController
 use LogsController
 use UsersController
 use SessionsController
+register Sinatra::Flash

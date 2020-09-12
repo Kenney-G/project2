@@ -1,1 +1,30 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Log</h1>
+
+<% if @log.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @log.errors.count %> error(s) prohibited this log from being saved:</h2>
+ 
+    <ul>
+    <% @log.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<form method="post" action="/logs/<%= @log.id %>">
+  <input type="hidden" name="_method" value="patch" />
+  <p>
+    <div><label for="title">Title</label></div>
+    <input id="title" type="text" name="log[title]" value="<%= @log.title %>" />
+  </p>
+
+  <p>
+    <div><label for="console">console</label></div>
+    <input id="console" type="text" name="log[title]" value="<%= @log.console %>" />
+  </p>
+  <p>
+  <div><label for="desc">content</label></div>
+<textarea rows="8" cols="45" id="content" type="text" name="log[desc]"><%= @log.desc %></textarea>
+  </p>
+  <input type="submit" value="Update log" />
+</form>

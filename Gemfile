@@ -12,7 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'bigdecimal', '1.3.5'
-
+gem 'sinatra-flash'
 group :test do
   gem 'rspec'
   gem 'capybara'
