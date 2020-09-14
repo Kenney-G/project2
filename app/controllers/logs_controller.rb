@@ -23,7 +23,6 @@ end
  # POST: /logs
   post "/logs" do
     redirect_if_not_logged_in
-    puts "hello"
     @log = current_user.logs.build(game_title: params[:log][:game_title],game_console: params[:log][:game_console],game_desc: params[:log][:game_desc])
     binding.pry
     if @log.save
@@ -44,6 +43,7 @@ end
 
   get "/logs/:id/edit" do
     set_log
+    flash[:error] = "Couldn't find a log with id: #{params[:id]}"
     erb :"/logs/edit"
   end
 
