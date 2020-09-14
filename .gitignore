@@ -3,3 +3,4 @@
 db/development.sqlite
 db/schema.rb
 .gitignore
+db/development.sqlite

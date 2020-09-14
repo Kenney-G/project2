@@ -10,15 +10,8 @@ body {
     padding-top: 4rem;  
   }
   
-    .container {
-    background-color: #222;
-    text-align: justify;
-    max-width: 750 px;
-    max-height: auto;
-    margin-top: 50px;
-    padding-top: 20px;
-    padding-bottom: 5px;
-}  
+
+
   .jumbotron {
     margin-top: 50px;
     margin-bottom: 50px;

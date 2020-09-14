@@ -1,10 +1,15 @@
 class SessionsController < ApplicationController
     
   get '/login' do 
+      if !logged_in?
       erb :'/sessions/login'
+      else
+        erb :'/users/show'
+      end
     end
    
     post '/login' do 
+      !logged_in?
       user = User.find_by_username(params[:username])
         if user && user.authenticate(params[:password]) 
           session[:id] = user.id
