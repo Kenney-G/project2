@@ -14,17 +14,17 @@
 <form method="post" action="/logs/<%= @log.id %>">
   <input type="hidden" name="_method" value="patch" />
   <p>
-    <div><label for="title">Title</label></div>
-    <input id="title" type="text" name="log[title]" value="<%= @log.title %>" />
+    <div><label for="game_title">Title</label></div>
+    <input id="game_title" type="text" name="log[game_title]" value="<%= @log.game_title %>" />
   </p>
 
   <p>
-    <div><label for="console">console</label></div>
-    <input id="console" type="text" name="log[title]" value="<%= @log.console %>" />
+    <div><label for="game_console">Console: </label></div>
+    <input id="game_console" type="text" name="log[game_console]" value="<%= @log.game_console %>" />
   </p>
   <p>
-  <div><label for="desc">content</label></div>
-<textarea rows="8" cols="45" id="content" type="text" name="log[desc]"><%= @log.desc %></textarea>
+  <div><label for="game_desc">Description: </label></div>
+<textarea rows="8" cols="45" id="game_desc" type="text" name="log[game_desc]"><%= @log.game_desc %></textarea>
   </p>
   <input type="submit" value="Update log" />
 </form>

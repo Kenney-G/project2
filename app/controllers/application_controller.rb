@@ -15,11 +15,7 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :'welcome'
   end
-  get "/logs" do
-    @logs = Log.all
-    erb :'logs/index'
-  end
-  
+ 
   not_found do
     flash[:error] = "Whoops! Couldn't find that route"
     redirect "/"

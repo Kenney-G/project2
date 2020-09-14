@@ -1,5 +1,11 @@
 class LogsController < ApplicationController
- 
+ require 'pry'
+
+ get "/logs" do
+  @logs = Log.all
+  erb :"/logs/index"
+end
+
   def set_log 
     @log = Log.find_by_id(params[:id])
     if @log.nil?
@@ -10,15 +16,16 @@ class LogsController < ApplicationController
   
   # GET: /logs/new
   get "/logs/new" do
-    @logs = Log.all
     @log = Log.new
     erb :"/logs/new"
   end
 
-  # POST: /logs
+ # POST: /logs
   post "/logs" do
     redirect_if_not_logged_in
-    @log = current_user.logs.build(title: params[:log][:game_title],console: params[:game_log][:console],desc: params[:log][:game_desc])
+    puts "hello"
+    @log = current_user.logs.build(game_title: params[:log][:game_title],game_console: params[:log][:game_console],game_desc: params[:log][:game_desc])
+    binding.pry
     if @log.save
       redirect "/logs/show"
     else
@@ -55,11 +62,11 @@ class LogsController < ApplicationController
   patch "/logs/:id" do
     set_log
     redirect_if_not_authorized
-    if @log.update(title: params[:log][:title], content:params[:log][:content])
+    if @log.update(game_title: params[:log][:game_title], game_console: params[:log][:game_console],game_desc: params[:log][:game_desc])
       flash[:success] = "log successfully updated"
       redirect "/logs/#{@log.id}"
     else 
-      erb :"/logs/edit.html"
+      erb :"/logs/edit"
     end
   end
 
