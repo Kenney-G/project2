@@ -11,12 +11,21 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
   end
 
-  @logs = Log.all
 
   get "/" do
-    erb :welcome
+    erb :'welcome'
+  end
+  get "/logs" do
+    @logs = Log.all
+    erb :'logs/index'
+  end
+  
+  not_found do
+    flash[:error] = "Whoops! Couldn't find that route"
+    redirect "/"
   end
 
+  private 
   def current_user 
     User.find_by_id(session[:id])
   end

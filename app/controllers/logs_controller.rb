@@ -1,11 +1,5 @@
 class LogsController < ApplicationController
  
-  # GET: /logs
-  get "/logs" do
-    @logs = Log.all
-    erb :"/logs/show"
-  end
-    
   def set_log 
     @log = Log.find_by_id(params[:id])
     if @log.nil?
@@ -14,12 +8,6 @@ class LogsController < ApplicationController
     end
   end
   
-  # GET: /logs
-  get "/logs" do
-    @logs = Log.all
-    erb :"/logs/index"
-  end
-
   # GET: /logs/new
   get "/logs/new" do
     @logs = Log.all
