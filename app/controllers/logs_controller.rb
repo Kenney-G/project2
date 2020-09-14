@@ -1,10 +1,16 @@
 class LogsController < ApplicationController
-
+ 
+  # GET: /logs
+  get "/logs" do
+    @logs = Log.all
+    erb :"/logs/show"
+  end
+    
   def set_log 
-    @log = log.find_by_id(params[:id])
+    @log = Log.find_by_id(params[:id])
     if @log.nil?
       flash[:error] = "Couldn't find a log with id: #{params[:id]}"
-      redirect "/logs"
+      redirect "/logs/new"
     end
   end
   
@@ -16,15 +22,17 @@ class LogsController < ApplicationController
 
   # GET: /logs/new
   get "/logs/new" do
+    @logs = Log.all
     @log = Log.new
     erb :"/logs/new"
   end
 
   # POST: /logs
   post "/logs" do
-    @log = current_user.logs.build(title: params[:log][:title],console: params[:log][:console],desc: params[:log][:desc])
+    redirect_if_not_logged_in
+    @log = current_user.logs.build(title: params[:log][:game_title],console: params[:game_log][:console],desc: params[:log][:game_desc])
     if @log.save
-      redirect "/logs"
+      redirect "/logs/show"
     else
       erb ":logs/new"
     end

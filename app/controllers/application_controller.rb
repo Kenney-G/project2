@@ -11,6 +11,8 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
   end
 
+  @logs = Log.all
+
   get "/" do
     erb :welcome
   end
