@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>no</title>
+		<title>Game Logjam</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,9 +31,11 @@
       </li>
       <% else %>
       <li class="nav-item">
-      <a class="nav-item"><form method="post" action="/logout"><input type="hidden" name="_method" value="delete"/>
-      <input type="submit" value="Log Out"/>
+                <form method="post" action="/logout" style="display: inline-block;">
+            <input type="hidden" name="_method" value="delete" />
+      <input class="btn btn-danger" type="submit" value="Logout">
       </a>
+</form>
 </div>
       <% end%>
       </form>
