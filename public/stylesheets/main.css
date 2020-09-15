@@ -15,16 +15,12 @@ body {
     margin-top: 50px;
     margin-bottom: 50px;
   }
-
-  .navbar form {
-   padding-left: 1500%;
-   }
-
-   .li btn-primary {
-     padding-left: 50px;
-   }
-
-   .button btn-info {
+.navbar ul li {
      padding-left: 50px;
      padding-right: 50px;
+   }
+
+   .well {
+     margin-left: 10px;
+     max-width: 25%;
    }

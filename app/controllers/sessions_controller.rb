@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       if !logged_in?
       erb :'/sessions/login'
       else
-        erb :'/users/show'
+        erb :'/logs/index'
       end
     end
    
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       user = User.find_by_username(params[:username])
         if user && user.authenticate(params[:password]) 
           session[:id] = user.id
-          redirect "/users/show"
+          redirect "/logs"
         else
           @error = "I couldn't get that to work. Try something else?" 
           erb :'/sessions/login'

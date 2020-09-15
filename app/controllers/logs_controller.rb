@@ -5,17 +5,9 @@ class LogsController < ApplicationController
   @logs = Log.all
   erb :"/logs/index"
 end
-
-  def set_log 
-    @log = Log.find_by_id(params[:id])
-    if @log.nil?
-      flash[:error] = "Couldn't find a log with id: #{params[:id]}"
-      redirect "/logs/new"
-    end
-  end
-  
   # GET: /logs/new
   get "/logs/new" do
+    redirect_if_not_logged_in
     @log = Log.new
     erb :"/logs/new"
   end
@@ -24,18 +16,16 @@ end
   post "/logs" do
     redirect_if_not_logged_in
     @log = current_user.logs.build(game_title: params[:log][:game_title],game_console: params[:log][:game_console],game_desc: params[:log][:game_desc])
-    binding.pry
     if @log.save
-      redirect "/logs/show"
+      redirect "/logs"
     else
-      erb ":logs/new"
+      erb :"logs/new"
     end
   end
 
   # GET: /logs/5
   get "/logs/:id" do
     set_log
-    @log = Log.find(params[:id])
     erb :"/logs/show"
   end
 
@@ -43,10 +33,42 @@ end
 
   get "/logs/:id/edit" do
     set_log
-    flash[:error] = "Couldn't find a log with id: #{params[:id]}"
+    redirect_if_not_authorized
     erb :"/logs/edit"
   end
 
+
+  #Update an existing backlog
+  patch "/logs/:id" do
+    set_log
+    redirect_if_not_authorized
+    if @log.update(game_title: params[:log][:game_title], game_console: params[:log][:game_console],game_desc: params[:log][:game_desc])
+      flash[:success] = "Log successfully updated"
+      redirect "/logs/#{@log.id}"
+    else 
+      erb :"/logs/edit"
+    end
+  end
+
+  # DELETE: /logs/5/delete
+  delete "/logs/:id/" do
+    set_log
+    redirect_if_not_authorized
+    @log.destroy
+    redirect "/logs"
+  end
+
+private
+
+  def set_log 
+    @log = Log.find_by_id(params[:id])
+    if @log.nil?
+      flash[:error] = "Couldn't find a log with id: #{params[:id]}"
+      redirect "/logs/"
+    end
+  end
+
+  
   def redirect_if_not_authorized
     if !authorize_log(@log)
       flash[:error] = "You don't have permission to do that action"
@@ -56,25 +78,6 @@ end
   
   def authorize_log(log)
     current_user == log.author
-  end
-
-  #Update an existing backlog
-  patch "/logs/:id" do
-    set_log
-    redirect_if_not_authorized
-    if @log.update(game_title: params[:log][:game_title], game_console: params[:log][:game_console],game_desc: params[:log][:game_desc])
-      flash[:success] = "log successfully updated"
-      redirect "/logs/#{@log.id}"
-    else 
-      erb :"/logs/edit"
-    end
-  end
-
-  # DELETE: /logs/5/delete
-    delete "/logs/:id/delete" do
-    set_log
-    redirect_if_not_authorized
-    redirect "/logs"
   end
   
 end

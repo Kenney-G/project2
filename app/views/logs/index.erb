@@ -1,4 +1,7 @@
-<h1>Logs</h1>
+<h1>Here's what users have been playing:</h1>
 <% @logs.each do |log| %>
-<p><a href="/logs/<%= log.id %>"><%= log.game_title %></a></p>
+<div class="well well-sm">
+<a href="/logs/<%= log.id %>"><%= log.game_title %></a>
+<br>
+</div>
 <% end %>

@@ -20,40 +20,11 @@ class UsersController < ApplicationController
     User.find_by_username(params[:username]).nil?
     @user = User.new(username: params[:username], password: params[:password])
       if @user.save
-        session[:id] = @user.id
+        session[:id] = @user.id 
         redirect "/"      
       else
         @error="Seems that may be taken. Try logging in if it's you!"
         erb :'users/new'
       end
       end
-
-  # GET: /users/5
-    #User's public read-only profile
-  get "/users/:id" do
-    redirect_if_not_logged_in
-    erb :"/users/show"
-  end
-
-  # GET: /users/5/edit
-    #//View for user to edit account information
-  get "/users/:id/edit" do
-    redirect_if_not_logged_in
-    erb :"/users/edit"
-  end
-
-  # PATCH: /users/5
-    #//Apply changes from edit route
-  patch "/users/:id" do
-    redirect_if_not_logged_in
-    redirect "/users/:id"
-  end
-
-  # DELETE: /users/5/delete
-    #Remove user from database
-  delete "/users/:id/delete" do
-    redirect_if_not_logged_in
-    redirect "/users"
-  end
-
 end

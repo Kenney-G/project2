@@ -1,1 +1,11 @@
-<h1>Welcome back, user.</h1>
+
+<h1>Welcome back, <%=current_user.username%>.</h1>
+<h3>What you've logged:</h3>
+   <% current_user.logs.each do |log| %>
+<div class="well well-sm">
+   <a href="/logs/<%= log.id %>"><%=log.game_title%></a>
+   <br>
+</div>
+   <%end%>
+
+  

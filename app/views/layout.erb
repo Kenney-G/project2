@@ -30,15 +30,20 @@
       <a class="nav-link" href="/login">Login</a>
       </li>
       <% else %>
+
       <li class="nav-item">
+      <a class="nav-link" href="/users">My Backlog</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/logs">All Logs</a>
+      </li>
+            <li class="nav-item">
                 <form method="post" action="/logout" style="display: inline-block;">
             <input type="hidden" name="_method" value="delete" />
       <input class="btn btn-danger" type="submit" value="Logout">
       </a>
 </form>
-      <li class="nav-item">
-      <a class="nav-link" href="/users/show">My Backlog</a>
-      </li>
+</li>
 </div>
       <% end%>
       </form>
@@ -97,13 +102,16 @@
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
+          My Info
         </button>
       </h5>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+<p><a href="https://www.github.com/kenney-g">Github: <img src="https://kenney.codes/css/images/github_icon.png"></a></p>
+        <p><a href="https://www.kenney.codes">Blog: <img src="https://kenney.codes/css/images/wordpress_icon.png"></a></p>
+        <p><a href="https://www.twitter.com/goadkenneth">Twitter: <img src="https://kenney.codes/css/images/twitter_icon.png"></a></p>
+        <p><a href="https://www.github.com/kenney-g">Youtube: <img src="https://kenney.codes/css/images/youtube_icon.png"></a></p>
       </div>
     </div>
   </div>
@@ -111,13 +119,13 @@
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
+          Flatiron School
         </button>
       </h5>
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <a href="https://flatironschool.com/">"Flatiron School is an accelerated adult-education tech school that teaches you the skills you need to become a software engineer, data scientist, cybersecurity analyst, or cybersecurity engineer. We publish annual Jobs Reports and provide comprehensive Career Services so you know you're getting a top-notch opportunity to change your career and your future."</a>
       </div>
     </div>
   </div>
