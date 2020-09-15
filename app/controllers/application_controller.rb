@@ -16,10 +16,10 @@ class ApplicationController < Sinatra::Base
     erb :'welcome'
   end
  
-  not_found do
-    flash[:error] = "Whoops! Couldn't find that route"
-    redirect "/"
-  end
+  # not_found do
+  #   flash[:error] = "I got lost, sorry. 404. Error beep boop bop."
+  #   redirect "/"
+  # end
 
   private 
   def current_user 

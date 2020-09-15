@@ -50,12 +50,11 @@ end
     end
   end
 
-  # DELETE: /logs/5/delete
-  delete "/logs/:id/" do
+  #DELETE: /logs/5/delete
+  delete '/logs/:id' do
     set_log
-    redirect_if_not_authorized
-    @log.destroy
-    redirect "/logs"
+    @log.id = Log.delete(params[:id])
+    redirect to("/users")
   end
 
 private
@@ -64,12 +63,13 @@ private
     @log = Log.find_by_id(params[:id])
     if @log.nil?
       flash[:error] = "Couldn't find a log with id: #{params[:id]}"
-      redirect "/logs/"
+      redirect "/logs"
     end
   end
 
   
   def redirect_if_not_authorized
+    redirect_if_not_logged_in
     if !authorize_log(@log)
       flash[:error] = "You don't have permission to do that action"
       redirect "/logs"
